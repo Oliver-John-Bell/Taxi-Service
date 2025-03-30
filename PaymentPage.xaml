@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.PaymentPage"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center">
+
+            <!-- remove this if you want but it feels like its missing somthing without it-->
+            <Image
+                Source="data:image/png;base64,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"
+                HeightRequest="150"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"/>
+
+            <Frame BackgroundColor="#FFFFFF" CornerRadius="10" Padding="20" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Card number" FontSize="Medium" x:Name="CardNumberLabel"/>
+                    <Entry Keyboard="Numeric" x:Name="CardNumberEntry" Text="1234567890123452" MaxLength="16"/>
+                    <Label Text="Cardholder name" FontSize="Medium" x:Name="NameLabel"/>
+                    <Entry x:Name="NameEntry" Placeholder="Full Name" />
+                    <Label Text="Expiration date" FontSize="Medium" x:Name="ExpirationDateLabel"/>
+                    <HorizontalStackLayout>
+                        <Entry Keyboard="Numeric" WidthRequest="100" x:Name="ExpirationMonthEntry" Placeholder="MM" HorizontalOptions="Start" MaxLength="2"/>
+                        <Entry Keyboard="Numeric" WidthRequest="100" x:Name="ExpirationYearEntry" Placeholder="YYYY" HorizontalOptions="Start" MaxLength="4"/>
+                    </HorizontalStackLayout>
+                    <Label Text="CCV" FontSize="Medium" x:Name="CCVLabel"/>
+                    <Entry Keyboard="Numeric" x:Name="CCVEntry" Placeholder="123" MaxLength="3"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Button Text="Submit Payment"
+                    FontSize="Medium"
+                    BackgroundColor="#4A148C"
+                    TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="20"
+                    Clicked="Button_Clicked"
+                    Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

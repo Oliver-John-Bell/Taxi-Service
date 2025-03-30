@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.CountPage"
+             Title="Your driver will arive in"
+             BackgroundColor="#FFF0F5">
+
+        <VerticalStackLayout Spacing="25"
+        Padding="30"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label Text="Your driver will arive in"
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="End"
+               FontAttributes="Bold"
+               TextColor="#795695"/>
+            
+        <Button Text="Cancel" Clicked="OnCancelClicked" Background="Black" VerticalOptions="End"/>
+        <Button Text="Trip Completed" Clicked="OnTripCompletedClicked" Background="Black" VerticalOptions="Start"/>
+            
+        <Frame CornerRadius="2000" Margin="0,0,0,300" BackgroundColor="#795695" HasShadow="True">
+                <Frame CornerRadius="2000" Margin="0,0,0,0" BackgroundColor="#C8A4D4">
+                    <Label x:Name="CountdownLabel"
+                Text="00:00"
+                TextColor="White"
+                FontSize="90"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                FontAttributes="Bold"/>
+                    
+                </Frame>
+            </Frame>
+           
+    </VerticalStackLayout>
+
+</ContentPage>

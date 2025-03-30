@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.DriverDetailPage"
+             Title="Driver Details"
+             BackgroundColor="#EDE7F6">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#6A57A5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#5E548E"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+            <Image x:Name="DriverImage" 
+                   WidthRequest="150" 
+                   HeightRequest="150"
+                   Margin="10"
+                   Aspect="AspectFill"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="DriverName"
+                   Style="{StaticResource LabelStyle}"/>
+            <Label x:Name="CarModel"
+                   Style="{StaticResource LabelStyle}"/>
+            <Label x:Name="Rating" 
+                   Style="{StaticResource LabelStyle}"/>
+            <Label x:Name="ETAC" 
+                   Style="{StaticResource LabelStyle}"/>
+            <Label x:Name="ETAG" 
+                   Style="{StaticResource LabelStyle}"/>
+            <Button Text="Confirm Trip" 
+                    Clicked="OnConfirmClicked" 
+                    Style="{StaticResource ButtonStyle}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

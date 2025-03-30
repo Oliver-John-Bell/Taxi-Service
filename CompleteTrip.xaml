@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.CompleteTrip"
+             Title="CompleteTrip"
+             BackgroundColor="#EDE7F6">
+    <StackLayout>
+        <!-- Display the details of the selected trip -->
+        <Label Text="{Binding SelectedTrip.Origin}" />
+        <Label Text="{Binding SelectedTrip.Destination}" />
+        <Label Text="{Binding SelectedTrip.TripCost}" />
+        <!-- Allow updating the rating -->
+        <Entry Text="{Binding Rating}" Placeholder="Enter Rating" />
+        <Button Text="Delete Selected"
+                Clicked="ButtonDel_Clicked"                   
+                BackgroundColor="#FF0000" 
+            TextColor="#FFFFFF"
+            Margin="0,10,0,0"/>
+        <Button Text="Update Rating"
+                Clicked="btnUpdate_Clicked"
+                BackgroundColor="#6A0DAD" 
+                TextColor="#FFFFFF"
+           
+                Margin="0,10,0,0"/>
+        <Button Text=" Order another Ride"
+                Clicked="Button_Clicked"
+                BackgroundColor="#ADD8E6" 
+                    TextColor="#000000"
+                  
+                    Margin="0,10,0,0"/>
+    </StackLayout>
+</ContentPage>

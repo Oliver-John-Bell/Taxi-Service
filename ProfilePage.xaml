@@ -1,0 +1,88 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.ProfilePage"
+             xmlns:local="clr-namespace:GRoupHI"
+             Title="ProfilePage"
+             BackgroundColor="#EAE0F8">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TripCountToProgressConverter x:Key="TripCountToProgressConverter" />
+            <local:PointToProgressConverter x:Key="PointToProgressConverter" />
+            <!-- Define custom colors for progress bar -->
+            <Color x:Key="ProgressBarColor_Normal">#0078D4</Color>
+            <!-- Blue color for normal progress -->
+            <Color x:Key="ProgressBarColor_Warning">#FFA500</Color>
+            <!-- Orange color for nearing completion -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+            <!-- Total Points Label with bold text -->
+        <Label Text="{Binding Points, StringFormat='Total Points: {0}'}"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Message indicating free trips when reaching 10 points -->
+            <Label Grid.Row="0" 
+                   Text="When you reach 10 points, you get 3 free trips."
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   FontAttributes="Bold" />
+
+            <!-- Progress Bar -->
+            <ProgressBar x:Name="progressBar"
+                         Grid.Row="1"
+                         Progress="{Binding TripCount, Converter={StaticResource TripCountToProgressConverter}}"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center"
+                         WidthRequest="300"
+                         HeightRequest="30"
+                         Margin="50" />
+
+            <!-- Display the current number of trips on the progress bar -->
+            <Label Text="{Binding TripCount, StringFormat='Number of Trips: {0}'}"
+                   Grid.Row="2"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="Black" />
+
+            
+
+            <!-- Button to save favorite location -->
+            <Button Text="Order A Ride"
+                    Grid.Row="4"
+                    HorizontalOptions="Center"
+                    WidthRequest="150"
+                    Margin="0,20,0,0"
+                    Clicked="SaveLocation_Clicked"/>
+            <Button Text="Inbox"
+                    Grid.Row="5"
+                    WidthRequest="150"
+                    Margin="0,20,0,0"
+                    Clicked="Button_Clicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

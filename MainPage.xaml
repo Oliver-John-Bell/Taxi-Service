@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.MainPage"
+             BackgroundColor="#EAE0F8">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="#6A57A5"/>
+                <Setter Property="PlaceholderColor" Value="#CDB5D5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="5,10"/>
+            </Style>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#6A57A5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="5,0"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#5E548E"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="5,10"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding="10">
+        <StackLayout>
+            <ImageButton Source="https://as2.ftcdn.net/v2/jpg/02/29/75/83/1000_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+             HorizontalOptions="End"
+             VerticalOptions="Start"
+             Clicked="OnProfileAvatarClicked"
+                         WidthRequest="5"
+                         HeightRequest="5"
+             Margin="0,20,20,0" />
+
+
+            <Label Text="Enter Pick Up Point:" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="originEntry" 
+                   Placeholder="Start" />
+
+            <Label Text="Enter Final Destination:" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="destinationEntry" 
+                   Placeholder="End" />
+
+            <Button Text="Calculate Trip Cost" 
+                    Clicked="OnCalculateClicked" />
+
+            <ListView x:Name="DriverListView" 
+                  Grid.Row="1"
+                  ItemTapped="DriverListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="4"
+                                       Source="{Binding ImageSource}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="Start"
+                                       Margin="0,20,20,0" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name, StringFormat='Name: {0}'}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding CarModel,  StringFormat='Car Model: {0}'}" />
+                                <Label Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="Rate: £2.50 per Kilometer" />
+                                <Label Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding Rating, StringFormat='Rating: {0:F2}'}" />
+                                <Label Grid.Row="4"
+                                       Grid.Column="1"
+                                       Text="{Binding EstimatedTimeDriver, StringFormat='Estimated time to pick up: {0:D} minutes' }"/>
+
+                                <Label Grid.Row="5"
+                                       Grid.Column="1"
+                                       Text="{Binding EstimatedTimeTrip, StringFormat='Estimated time to final destination: {0:D} minutes'}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,36 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.EmptyInboxPage"
+             Title="Empty Inbox">
+
+    <!-- Content -->
+    <Grid Padding="20">
+        <!-- StackLayout for the main content -->
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+            <!-- Header -->
+            <Label Text="Empty Inbox"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Message indicating the inbox is empty -->
+            <Label Text="Your inbox is empty."
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <!-- Optionally, you can add decorative icons or images here -->
+
+            <!-- Example: Icon -->
+            <Image Source="https://img.freepik.com/premium-vector/vector-illustration-with-outline-empty-inbox-empty-state-android-app-web-ui_511290-62.jpg"
+                   HeightRequest="450"
+                   WidthRequest="500"
+                   HorizontalOptions="Center" />
+
+            <!-- Example: Button to refresh or add content -->
+            <Button Text="Refresh"
+                    HorizontalOptions="Center"
+                    Clicked="OnRefreshClicked" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

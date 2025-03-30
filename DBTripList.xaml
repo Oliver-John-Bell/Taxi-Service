@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GRoupHI"
+             x:Class="GRoupHI.DBTripList"
+             Title="DBTripList"
+             BackgroundColor="#F0EAFD">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#6A57A5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <SearchBar x:Name="txtSearchTerm"
+                   Placeholder="Search by Name or Address"
+                   FontSize="28" 
+                   Text="{Binding SearchTerm}"/>
+
+        <ListView x:Name="tripListView"
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding AllTrips}"
+                  ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10,10"
+                                     VerticalOptions="StartAndExpand"
+                                     HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding TId, StringFormat='Trip ID: {0}'}"
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Label Text="{Binding Origin, StringFormat='Origin: {0}'}"
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Label Text="{Binding Destination, StringFormat='Destination: {0}'}"
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Label Text="{Binding TripCost, StringFormat='Price: £{0:F3}'}"
+                                   Style="{StaticResource LabelStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

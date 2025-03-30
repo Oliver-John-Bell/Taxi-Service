@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GRoupHI.LoginPage"
+             Title="Welcome Back Student"
+             BackgroundColor="#EAE0F8">
+    <StackLayout Padding="20">
+        <!-- Add the University of Buckingham logo -->
+        <Image Source="https://upload.wikimedia.org/wikipedia/commons/b/b8/University_of_Buckingham_logo_for_wikipedia.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="0,20,0,0" />
+
+        <Entry Placeholder="Username" x:Name="UsernameEntry" />
+        <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
+        <Button Text="Login" Clicked="OnLoginButtonClicked" />
+    </StackLayout>
+</ContentPage>

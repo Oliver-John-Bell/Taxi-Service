@@ -7,7 +7,7 @@ namespace GRoupHI
 {
     public partial class MainPage : ContentPage
     {
-        private const string ApiKey = "AIzaSyCp1OvsBoU_o0IkL0c5GwnSyGXxdaRs2gE";
+        private const string ApiKey = "";
         public const string CommonStartPoint = "MK18 1EG";
         public Entry OriginEntry => originEntry;
         public Entry DestinationEntry => destinationEntry;
